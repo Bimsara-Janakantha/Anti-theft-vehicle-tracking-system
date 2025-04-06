@@ -1,5 +1,6 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Typography, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/LOGO.png";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -8,17 +9,29 @@ export default function Home() {
     <Grid
       container
       spacing={2}
-      justifyContent="center"
-      alignItems="center"
       direction="column"
+      alignItems="center"
+      justifyContent="center"
       minHeight="100vh"
+      padding={2}
     >
       <Grid>
-        <Typography variant="h4">Welcome to the App!</Typography>
+        <img src={logo} alt="V Track Logo" style={{ maxWidth: 200 }} />
       </Grid>
+
       <Grid>
-        <Button variant="contained" onClick={() => navigate("/second")}>
-          Go to Next Page
+        <Typography variant="h3" align="center" fontWeight={"bold"}>
+          Welcome to V Track
+        </Typography>
+        <Typography variant="subtitle1">
+          Your reliable partner in anti-theft vehicle tracking. Stay connected
+          and protected.
+        </Typography>
+      </Grid>
+
+      <Grid>
+        <Button variant="contained" onClick={() => navigate("/app")}>
+          Get Started
         </Button>
       </Grid>
     </Grid>
