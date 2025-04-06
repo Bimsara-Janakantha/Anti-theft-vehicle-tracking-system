@@ -1,4 +1,4 @@
-import { Container, Grid, IconButton, Tooltip } from "@mui/material";
+import { Button, Container, Grid, Tooltip } from "@mui/material";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import LockOutlineIcon from "@mui/icons-material/LockOutline";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
@@ -43,9 +43,23 @@ export default function SMSPage() {
           display={"flex"}
         >
           <Tooltip title="Send location">
-            <IconButton onClick={handleButton1} size="large">
-              <NearMeIcon fontSize="large" />
-            </IconButton>
+            <Button
+              sx={{
+                width: "230px",
+                height: "50px",
+                fontSize: "large",
+                fontWeight: "bold",
+                display: "flex",
+                alignItems: "center",
+                gap: "7px",
+                bgcolor: "#1a76d2",
+              }}
+              variant="contained"
+              onClick={handleButton1}
+              endIcon={<NearMeIcon fontSize="large" />}
+            >
+              Send Location
+            </Button>
           </Tooltip>
         </Grid>
 
@@ -55,9 +69,23 @@ export default function SMSPage() {
           display={"flex"}
         >
           <Tooltip title="Lock Car">
-            <IconButton onClick={handleButton2} size="large">
-              <LockOutlineIcon fontSize="large" />
-            </IconButton>
+            <Button
+              sx={{
+                width: "230px",
+                height: "50px",
+                fontSize: "large",
+                fontWeight: "bold",
+                display: "flex",
+                alignItems: "center",
+                gap: "7px",
+                bgcolor: "#E74C3C",
+              }}
+              variant="contained"
+              onClick={handleButton2}
+              endIcon={<LockOutlineIcon fontSize="large" />}
+            >
+              Lock Car
+            </Button>
           </Tooltip>
         </Grid>
 
@@ -67,9 +95,23 @@ export default function SMSPage() {
           display={"flex"}
         >
           <Tooltip title="Unlock Car">
-            <IconButton onClick={handleButton3} size="large">
-              <LockOpenIcon fontSize="large" />
-            </IconButton>
+            <Button
+              sx={{
+                width: "230px",
+                height: "50px",
+                fontSize: "large",
+                fontWeight: "bold",
+                display: "flex",
+                alignItems: "center",
+                gap: "7px",
+                bgcolor: "#009866",
+              }}
+              variant="contained"
+              onClick={handleButton3}
+              endIcon={<LockOpenIcon fontSize="large" />}
+            >
+              Unlock Car
+            </Button>
           </Tooltip>
         </Grid>
       </Grid>
