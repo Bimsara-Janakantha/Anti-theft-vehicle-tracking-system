@@ -50,3 +50,50 @@ This project is developed as part of the **3rd-Year Engineering Electronics and 
 git clone https://github.com/your-username/v-tracker.git
 cd v-tracker
 ```
+
+#### 2. Install dependencies
+
+```bash
+npm install
+```
+
+#### 3. Run the project
+
+```bash
+npm start
+```
+
+The app will now run locally at http://localhost:5173(or the port specified).
+
+---
+
+### How It Works
+
+1. **Send Location:**
+
+   - The user can press a button to retrieve the current GPS location of their vehicle. The location will get as the sms to his mobile.
+
+2. **Lock and Unlock Car:**
+
+   - Users can lock or unlock their vehicle remotely through the app, ensuring that the vehicle remains secure while they are away.
+
+---
+
+### UI/UX Design:
+
+- Material-UI is used for creating a responsive and user-friendly interface.
+
+- The app is designed to work seamlessly on both mobile and desktop views.
+
+---
+
+### Screenshots
+
+Here are some screenshots of the V Tracker app in action:
+
+1. **Home Page**
+   ![alt text](image.png)
+
+2. **App Dashboard**
+
+3. **4. Mobile View**
