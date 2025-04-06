@@ -94,5 +94,4 @@ Here are some screenshots of the V Tracker app in action:
 3. **4. Mobile View**
 
    ![alt text](image-2.png)
-
    ![alt text](image-3.png)
