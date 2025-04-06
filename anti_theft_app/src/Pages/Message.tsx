@@ -2,8 +2,10 @@ import { Button, Container, Grid, Tooltip } from "@mui/material";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import LockOutlineIcon from "@mui/icons-material/LockOutline";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
+import { useNavigate } from "react-router-dom";
 
 export default function SMSPage() {
+  const navigator = useNavigate();
   const phoneNumber = "+94705103334";
 
   const handleSMS = (message: string) => {
@@ -36,7 +38,7 @@ export default function SMSPage() {
         alignItems: "center",
       }}
     >
-      <Grid container spacing={2} width={"100%"}>
+      <Grid container spacing={4} width={"100%"}>
         <Grid
           size={{ xs: 12, md: 4 }}
           justifyContent={"center"}
@@ -45,7 +47,7 @@ export default function SMSPage() {
           <Tooltip title="Send location">
             <Button
               sx={{
-                width: "230px",
+                width: "240px",
                 height: "50px",
                 fontSize: "large",
                 fontWeight: "bold",
@@ -53,6 +55,7 @@ export default function SMSPage() {
                 alignItems: "center",
                 gap: "7px",
                 bgcolor: "#1a76d2",
+                borderRadius: "30px",
               }}
               variant="contained"
               onClick={handleButton1}
@@ -71,7 +74,7 @@ export default function SMSPage() {
           <Tooltip title="Lock Car">
             <Button
               sx={{
-                width: "230px",
+                width: "240px",
                 height: "50px",
                 fontSize: "large",
                 fontWeight: "bold",
@@ -79,6 +82,7 @@ export default function SMSPage() {
                 alignItems: "center",
                 gap: "7px",
                 bgcolor: "#E74C3C",
+                borderRadius: "30px",
               }}
               variant="contained"
               onClick={handleButton2}
@@ -97,7 +101,7 @@ export default function SMSPage() {
           <Tooltip title="Unlock Car">
             <Button
               sx={{
-                width: "230px",
+                width: "240px",
                 height: "50px",
                 fontSize: "large",
                 fontWeight: "bold",
@@ -105,6 +109,7 @@ export default function SMSPage() {
                 alignItems: "center",
                 gap: "7px",
                 bgcolor: "#009866",
+                borderRadius: "30px",
               }}
               variant="contained"
               onClick={handleButton3}
@@ -113,6 +118,29 @@ export default function SMSPage() {
               Unlock Car
             </Button>
           </Tooltip>
+        </Grid>
+
+        <Grid size={{ xs: 12 }} justifyContent={"center"} display={"flex"}>
+          <Button
+            sx={{
+              width: "240px",
+              height: "50px",
+              fontSize: "large",
+              fontWeight: "bold",
+              display: "flex",
+              alignItems: "center",
+              gap: "7px",
+              bgcolor: "#595959",
+              borderRadius: "30px",
+            }}
+            variant="contained"
+            onClick={() => {
+              navigator("/home");
+            }}
+            startIcon={<LockOpenIcon fontSize="large" />}
+          >
+            Back
+          </Button>
         </Grid>
       </Grid>
     </Container>
