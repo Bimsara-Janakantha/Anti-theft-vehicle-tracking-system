@@ -21,7 +21,10 @@ export default function Home() {
 
       <Grid>
         <Typography variant="h3" align="center" fontWeight={"bold"}>
-          Welcome to V Track
+          Welcome to
+        </Typography>
+        <Typography variant="h3" align="center" fontWeight={"bold"}>
+          V Track
         </Typography>
         <Typography variant="subtitle1">
           Your reliable partner in anti-theft vehicle tracking. Stay connected

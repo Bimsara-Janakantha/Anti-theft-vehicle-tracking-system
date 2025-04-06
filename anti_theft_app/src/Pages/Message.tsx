@@ -1,8 +1,11 @@
-import { Button, Container, Grid, Tooltip } from "@mui/material";
+import { Button, Container, Grid, Tooltip, Typography } from "@mui/material";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import LockOutlineIcon from "@mui/icons-material/LockOutline";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/LOGO.png";
+import ActionButton from "../Components/ActionButton";
 
 export default function SMSPage() {
   const navigator = useNavigate();
@@ -29,6 +32,11 @@ export default function SMSPage() {
     handleSMS("U");
   };
 
+  const handleButton4 = () => {
+    console.log("Emergancy...");
+    handleSMS("E");
+  };
+
   return (
     <Container
       sx={{
@@ -39,6 +47,21 @@ export default function SMSPage() {
       }}
     >
       <Grid container spacing={4} width={"100%"}>
+        <Grid
+          size={12}
+          justifyContent={"center"}
+          alignItems={"center"}
+          flexDirection={"column"}
+          display={"flex"}
+          mb={2}
+        >
+          <img src={logo} alt="V Track Logo" style={{ maxWidth: 200 }} />
+
+          <Typography fontWeight={"bold"} variant="h6" textAlign={"center"}>
+            Your reliable partner in anti-theft vehicle tracking.
+          </Typography>
+        </Grid>
+
         <Grid
           size={{ xs: 12, md: 4 }}
           justifyContent={"center"}
@@ -120,7 +143,7 @@ export default function SMSPage() {
           </Tooltip>
         </Grid>
 
-        <Grid size={{ xs: 12 }} justifyContent={"center"} display={"flex"}>
+        <Grid size={12} justifyContent={"center"} display={"flex"}>
           <Button
             sx={{
               width: "240px",
@@ -137,12 +160,14 @@ export default function SMSPage() {
             onClick={() => {
               navigator("/home");
             }}
-            startIcon={<LockOpenIcon fontSize="large" />}
+            startIcon={<ArrowBackIcon fontSize="large" />}
           >
             Back
           </Button>
         </Grid>
       </Grid>
+
+      <ActionButton onClick={handleButton4} />
     </Container>
   );
 }
