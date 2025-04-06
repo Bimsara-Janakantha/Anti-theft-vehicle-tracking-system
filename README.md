@@ -92,13 +92,15 @@ The app will now run locally at http://localhost:5173(or the port specified).
 Here are some screenshots of the V Tracker app in action:
 
 1. **Home Page**
+
    ![alt text](image.png)
 
 2. **App Dashboard**
+
    ![alt text](image-1.png)
 
-
 3. **4. Mobile View**
+
    ![alt text](image-2.png)
 
    ![alt text](image-3.png)
