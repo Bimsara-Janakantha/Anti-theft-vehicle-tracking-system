@@ -1,9 +1,13 @@
 import { Button, Grid } from "@mui/material";
 
-export default function Message() {
+export default function SMSPage() {
+  const phoneNumber = "+94704109990";
+  const message = "hello";
+
   const handleSMS = () => {
-    // This opens the SMS app with "hello" as the message
-    window.location.href = "sms:?body=hello";
+    window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(
+      message
+    )}`;
   };
 
   return (
