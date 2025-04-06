@@ -24,14 +24,6 @@ The app is designed to handle key security functions for vehicles, including sen
 
 ---
 
-## Project Section for DEEE 3rd-Year Project
-
-### Objective
-
-This project is developed as part of the **3rd-Year Engineering Electronics and Electrical Engineering (DEEE)** curriculum. The primary objective is to create a system that enhances vehicle security by providing real-time tracking and remote control features through a mobile or web application.
-
----
-
 ### Technologies Used:
 
 - **Frontend**: React.js, Vite, TypeScript, Material-UI
