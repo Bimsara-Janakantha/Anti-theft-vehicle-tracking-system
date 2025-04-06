@@ -30,7 +30,7 @@ export default function Home() {
       </Grid>
 
       <Grid>
-        <Button variant="contained" onClick={() => navigate("/app")}>
+        <Button variant="contained" onClick={() => navigate("/msg")}>
           Get Started
         </Button>
       </Grid>
