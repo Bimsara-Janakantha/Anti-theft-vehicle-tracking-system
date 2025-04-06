@@ -71,7 +71,7 @@ The app will now run locally at http://localhost:5173(or the port specified).
 
 1. **Send Location:**
 
-   - The user can press a button to retrieve the current GPS location of their vehicle. The location will get as the sms to his mobile.
+   - The user can press a button to retrieve the current GPS location of their vehicle, and the location will be sent to their mobile as an SMS.
 
 2. **Lock and Unlock Car:**
 
