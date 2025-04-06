@@ -1,7 +1,6 @@
 import { Button, Typography, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/LOGO.png";
-import { WrapText } from "@mui/icons-material";
 
 export default function Home() {
   const navigate = useNavigate();
