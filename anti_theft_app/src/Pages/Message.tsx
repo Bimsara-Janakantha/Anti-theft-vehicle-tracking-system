@@ -19,7 +19,7 @@ export default function SMSPage() {
 
   const handleButton1 = () => {
     console.log("Sending Location...");
-    handleSMS("L");
+    handleSMS("E");
   };
 
   const handleButton2 = () => {
@@ -34,7 +34,7 @@ export default function SMSPage() {
 
   const handleButton4 = () => {
     console.log("Emergancy...");
-    handleSMS("E");
+    handleSMS("L");
   };
 
   return (
