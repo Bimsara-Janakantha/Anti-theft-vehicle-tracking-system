@@ -19,7 +19,7 @@ export default function SMSPage() {
 
   const handleButton1 = () => {
     console.log("Sending Location...");
-    handleTelegramMessage("E");
+    handleTelegramMessage("L");
   };
 
   const handleButton2 = () => {
@@ -39,7 +39,7 @@ export default function SMSPage() {
 
   const handleButton5 = () => {
     console.log("Emergancy...");
-    handleTelegramMessage("L");
+    handleTelegramMessage("E");
   };
 
   return (
