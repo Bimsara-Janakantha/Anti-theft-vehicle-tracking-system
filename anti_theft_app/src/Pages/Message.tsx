@@ -3,6 +3,7 @@ import NearMeIcon from "@mui/icons-material/NearMe";
 import LockOutlineIcon from "@mui/icons-material/LockOutline";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import PlaceIcon from "@mui/icons-material/Place";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/LOGO.png";
 import ActionButton from "../Components/ActionButton";
@@ -33,6 +34,11 @@ export default function SMSPage() {
   };
 
   const handleButton4 = () => {
+    console.log("Goto Map...");
+    navigator("/map");
+  };
+
+  const handleButton5 = () => {
     console.log("Emergancy...");
     handleSMS("L");
   };
@@ -55,7 +61,7 @@ export default function SMSPage() {
           display={"flex"}
           mb={2}
         >
-          <img src={logo} alt="V Track Logo" style={{ maxWidth: 200 }} />
+          <img src={logo} alt="Logo" style={{ maxWidth: 500, width: "100%" }} />
 
           <Typography fontWeight={"bold"} variant="h6" textAlign={"center"}>
             Your reliable partner in anti-theft vehicle tracking.
@@ -63,7 +69,7 @@ export default function SMSPage() {
         </Grid>
 
         <Grid
-          size={{ xs: 12, md: 4 }}
+          size={{ xs: 12, md: 3 }}
           justifyContent={"center"}
           display={"flex"}
         >
@@ -90,7 +96,7 @@ export default function SMSPage() {
         </Grid>
 
         <Grid
-          size={{ xs: 12, md: 4 }}
+          size={{ xs: 12, md: 3 }}
           justifyContent={"center"}
           display={"flex"}
         >
@@ -117,7 +123,7 @@ export default function SMSPage() {
         </Grid>
 
         <Grid
-          size={{ xs: 12, md: 4 }}
+          size={{ xs: 12, md: 3 }}
           justifyContent={"center"}
           display={"flex"}
         >
@@ -131,7 +137,7 @@ export default function SMSPage() {
                 display: "flex",
                 alignItems: "center",
                 gap: "7px",
-                bgcolor: "#009866",
+                bgcolor: "#a89b25ff",
                 borderRadius: "30px",
               }}
               variant="contained"
@@ -139,6 +145,33 @@ export default function SMSPage() {
               endIcon={<LockOpenIcon fontSize="large" />}
             >
               Unlock Car
+            </Button>
+          </Tooltip>
+        </Grid>
+
+        <Grid
+          size={{ xs: 12, md: 3 }}
+          justifyContent={"center"}
+          display={"flex"}
+        >
+          <Tooltip title="Goto Map">
+            <Button
+              sx={{
+                width: "240px",
+                height: "50px",
+                fontSize: "large",
+                fontWeight: "bold",
+                display: "flex",
+                alignItems: "center",
+                gap: "7px",
+                bgcolor: "#009866",
+                borderRadius: "30px",
+              }}
+              variant="contained"
+              onClick={handleButton4}
+              endIcon={<PlaceIcon fontSize="large" />}
+            >
+              Goto Map
             </Button>
           </Tooltip>
         </Grid>
@@ -167,7 +200,7 @@ export default function SMSPage() {
         </Grid>
       </Grid>
 
-      <ActionButton onClick={handleButton4} />
+      <ActionButton onClick={handleButton5} />
     </Container>
   );
 }

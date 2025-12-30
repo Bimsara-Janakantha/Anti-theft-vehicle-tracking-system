@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <Grid
       container
-      spacing={3}
       direction="column"
       alignItems="center"
       justifyContent="center"
@@ -16,15 +15,20 @@ export default function Home() {
       padding={2}
     >
       <Grid>
-        <img src={logo} alt="V Track Logo" style={{ maxWidth: 200 }} />
+        <img src={logo} alt="Logo" style={{ maxWidth: 600, width: "100%" }} />
       </Grid>
 
       <Grid>
-        <Typography variant="h3" align="center" fontWeight={"bold"}>
-          Welcome to <span style={{ whiteSpace: "nowrap" }}>V Tracker</span>
+        <Typography variant="h3" align="center" fontWeight={"bold"} mb={2}>
+          Welcome<span style={{ whiteSpace: "nowrap" }}></span>
         </Typography>
 
-        <Typography variant="h6" fontWeight={"bold"} textAlign={"center"}>
+        <Typography
+          variant="h6"
+          fontWeight={"bold"}
+          textAlign={"center"}
+          mb={3}
+        >
           Your reliable partner in anti-theft vehicle tracking. Stay connected
           and protected.
         </Typography>
