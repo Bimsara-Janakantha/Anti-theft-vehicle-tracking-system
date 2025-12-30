@@ -22,7 +22,7 @@ export default function LeafletMap() {
 
     L.marker(location)
       .addTo(mapRef.current)
-      .bindPopup("University of Peradeniya");
+      .bindPopup(`${location}`);
 
     return () => {
       mapRef.current?.remove();
