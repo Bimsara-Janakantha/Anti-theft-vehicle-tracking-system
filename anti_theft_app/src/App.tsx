@@ -1,7 +1,8 @@
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home";
-import { Box } from "@mui/material";
 import Message from "./Pages/Message";
+import Map from "./Pages/Map";
+import { Box } from "@mui/material";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
           <Route path="/" element={<Navigate to={"/home"} />} />
           <Route path="/home" element={<Home />} />
           <Route path="/msg" element={<Message />} />
+          <Route path="/map" element={<Map />} />
           <Route path="/*" element={<Navigate to={"/home"} />} />
         </Routes>
       </BrowserRouter>
