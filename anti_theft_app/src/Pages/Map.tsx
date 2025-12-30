@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/LOGO.png";
 import MapView from "../Components/LeafletMap";
 
 export default function Map() {
