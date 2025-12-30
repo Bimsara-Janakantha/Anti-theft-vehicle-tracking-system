@@ -10,27 +10,26 @@ import ActionButton from "../Components/ActionButton";
 
 export default function SMSPage() {
   const navigator = useNavigate();
-  const phoneNumber = "+94705103334";
+  const botLink = "https://t.me/MyESP32_NotifierBot"; 
 
-  const handleSMS = (message: string) => {
-    window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(
-      message
-    )}`;
+  const handleTelegramMessage = (message: string) => {
+    const url = `${botLink}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank"); // opens in new tab
   };
 
   const handleButton1 = () => {
     console.log("Sending Location...");
-    handleSMS("E");
+    handleTelegramMessage("E");
   };
 
   const handleButton2 = () => {
     console.log("Lock Car...");
-    handleSMS("B");
+    handleTelegramMessage("B");
   };
 
   const handleButton3 = () => {
     console.log("Unlock Car...");
-    handleSMS("U");
+    handleTelegramMessage("U");
   };
 
   const handleButton4 = () => {
@@ -40,7 +39,7 @@ export default function SMSPage() {
 
   const handleButton5 = () => {
     console.log("Emergancy...");
-    handleSMS("L");
+    handleTelegramMessage("L");
   };
 
   return (
