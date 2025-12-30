@@ -1,9 +1,19 @@
 import { useEffect, useRef } from "react";
 import L, { LatLngExpression } from "leaflet";
-import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
+import { renderToString } from "react-dom/server";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
+function createMuiIcon(color = "#d32f2f", size = 40) {
+  return L.divIcon({
+    html: renderToString(
+      <LocationOnIcon sx={{ color, fontSize: size }} />
+    ),
+    className: "", // IMPORTANT: remove default leaflet styles
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size], // bottom-center
+    popupAnchor: [0, -size],
+  });
+}
 
 export default function LeafletMap() {
   const mapRef = useRef<L.Map | null>(null);
@@ -15,36 +25,34 @@ export default function LeafletMap() {
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current) return;
 
-    mapRef.current = L.map(mapContainerRef.current).setView(
+    const map = L.map(mapContainerRef.current).setView(
       location,
       zoomLevel
     );
 
+    mapRef.current = map;
+
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap contributors",
-    }).addTo(mapRef.current);
+    }).addTo(map);
 
-    L.marker(location)
-      .addTo(mapRef.current)
-      .bindPopup(`${location}`);
+    // ✅ MUI marker icon
+    const muiIcon = createMuiIcon("#1976d2", 44);
 
-    delete (L.Icon.Default.prototype as any)._getIconUrl;
-
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: markerIcon2x,
-      iconUrl: markerIcon,
-      shadowUrl: markerShadow,
-    });
-
+    L.marker(location, { icon: muiIcon })
+      .addTo(map)
+      .bindPopup(`Lat: ${(location as number[])[0]}, Lng: ${(location as number[])[1]}`);
 
     return () => {
-      mapRef.current?.remove();
+      map.remove();
       mapRef.current = null;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div ref={mapContainerRef} style={{ height: "100%", width: "100%" }} />
+    <div
+      ref={mapContainerRef}
+      style={{ height: "100%", width: "100%" }}
+    />
   );
 }
