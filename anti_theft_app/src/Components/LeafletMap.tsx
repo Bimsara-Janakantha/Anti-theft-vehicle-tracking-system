@@ -1,5 +1,9 @@
 import { useEffect, useRef } from "react";
 import L, { LatLngExpression } from "leaflet";
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
+
 
 export default function LeafletMap() {
   const mapRef = useRef<L.Map | null>(null);
@@ -23,6 +27,15 @@ export default function LeafletMap() {
     L.marker(location)
       .addTo(mapRef.current)
       .bindPopup(`${location}`);
+
+    delete (L.Icon.Default.prototype as any)._getIconUrl;
+
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: markerIcon2x,
+      iconUrl: markerIcon,
+      shadowUrl: markerShadow,
+    });
+
 
     return () => {
       mapRef.current?.remove();
