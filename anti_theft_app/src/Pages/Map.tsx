@@ -11,7 +11,7 @@ export default function Map() {
           width: "100%",
           display: "flex",
           alignItems: "center",
-          justifyContent: "end",
+          justifyContent: { xs: "center", md: "end" },
           position: "fixed",
           top: "10px",
           right: "10px",
@@ -25,8 +25,8 @@ export default function Map() {
             height: "80px",
             backgroundColor: "white",
             margin: "0 10px",
-            borderRadius: "8px",
             opacity: "80%",
+            borderRadius: "8px",
           }}
         />
       </Box>
